@@ -1,0 +1,97 @@
+<!--
+SilvioLinux - Blue Dark Download Site Template
+Contains multiple page templates in one file. Split into separate files:
+  - index.html        -> Home / overview
+  - downloads.html    -> Downloads table (old builds & new builds)
+  - editions.html     -> Editions descriptions (Full, Minimal, Tiny, Small, Ultra Small, Nano)
+  - mirrors.html      -> Mirrors / repository mirror page
+  - source.html       -> Source code / repos / links
+  - support.html      -> Support contacts (email, SMS, WhatsApp, Telegram)
+
+Instructions:
+  1. Copy each PAGE block below into its own file (filename above).
+  2. Replace DOWNLOAD_LINK placeholders with real URLs for each architecture/build.
+  3. Host on any static web host (GitHub Pages, Netlify, Apache, Nginx).
+  4. All pages use plain HTML + CSS (no JavaScript) as requested.
+
+Copyright 2028 Silvio Ramalho Neto da Silva
+Support: silvioneto36762@gmail.com | SMS/WhatsApp/Telegram: +55(28)99963-2513
+User: SilvioNetoesBrasil40
+-->
+
+<!-- COMMON STYLES: copy into each page's <head> or use an external css file -->
+<style>
+:root{
+  --bg:#071029; /* very dark blue */
+  --panel:#0f2340;
+  --accent:#1e90ff; /* blue accent */
+  --muted:#9fb6d8;
+  --success:#57b894;
+  --danger:#e06c75;
+  --glass: rgba(255,255,255,0.03);
+  --radius:12px;
+  --maxw:1100px;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, Roboto, system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', Arial;color:var(--muted);background:linear-gradient(180deg,var(--bg),#031226);}
+.container{max-width:var(--maxw);margin:28px auto;padding:28px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:16px;box-shadow:0 6px 30px rgba(0,0,0,0.6);}
+.header{display:flex;align-items:center;gap:16px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#3fb0ff);display:flex;align-items:center;justify-content:center;font-weight:700;color:#042233}
+.h1{font-size:20px;color:#dbeeff;margin:0}
+.nav{margin-left:auto}
+.nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px}
+.nav a:hover{background:var(--glass);color:var(--accent)}
+.hero{margin-top:18px;padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(30,48,64,0.2),transparent);display:flex;align-items:center;justify-content:space-between}
+.hero .lead{max-width:72%}
+.lead h2{margin:0;color:#e7f5ff}
+.lead p{margin:6px 0 0;color:var(--muted)}
+.badge{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);color:var(--muted);border:1px solid rgba(255,255,255,0.02);font-size:13px}
+.grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:18px}
+.card{background:var(--panel);padding:16px;border-radius:12px}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{padding:10px;text-align:left;border-bottom:1px dashed rgba(255,255,255,0.03);font-size:14px}
+.table th{color:#cfe8ff}
+.status{padding:6px 10px;border-radius:999px;font-size:13px}
+.status.eol{background:linear-gradient(90deg, rgba(224,108,117,0.12), transparent);color:var(--danger);border:1px solid rgba(224,108,117,0.12)}
+.status.disc{background:linear-gradient(90deg, rgba(140,140,140,0.12), transparent);color:#9aa0a6;border:1px solid rgba(140,140,140,0.12)}
+.status.support{background:linear-gradient(90deg, rgba(87,184,148,0.08), transparent);color:var(--success);border:1px solid rgba(87,184,148,0.06)}
+.btn{display:inline-block;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600;border:1px solid rgba(255,255,255,0.04);background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);color:var(--accent)}
+.small{font-size:13px;color:var(--muted)}
+.footer{margin-top:20px;padding-top:12px;border-top:1px dashed rgba(255,255,255,0.03);color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+@media(min-width:900px){.grid{grid-template-columns:1fr 360px}}
+.table .download{white-space:nowrap}
+.note{font-size:13px;color:#9fb6d8}
+</style>
+
+<!-- PAGE: editions.html -->
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Edições — SilvioLinux</title></head>
+<body>
+  <div class="container">
+    <header class="header"><div class="brand"><div class="logo">SL</div><div><h1 class="h1">Edições</h1><div class="small">Todas usam OpenBox</div></div></div><nav class="nav"><a href="index.html">Home</a><a href="downloads.html">Downloads</a><a href="mirrors.html">Mirrors</a><a href="source.html">Códigos-Fonte</a><a href="support.html">Suporte</a></nav></header>
+
+    <main class="card">
+      <h3>Seis Edições</h3>
+      <table class="table">
+        <thead><tr><th>Edição</th><th>Descrição</th><th>Requisitos Mínimos (i686)</th><th>Recomendado (i686)</th></tr></thead>
+        <tbody>
+          <tr><td>Full Desktop Edition</td><td>Ambiente completo com apps desktop e ferramentas.</td><td>CPU i686, 512MB RAM, 4GB disco</td><td>CPU i686 1GHz, 1GB RAM, 8GB disco</td></tr>
+          <tr><td>Minimal Desktop Edition</td><td>Ambiente leve com apps essenciais.</td><td>CPU i686, 256MB RAM, 2GB disco</td><td>CPU i686 800MHz, 512MB RAM, 4GB disco</td></tr>
+          <tr><td>Tiny Desktop Edition</td><td>Para máquinas muito antigas — foco em CLI + OpenBox.</td><td>CPU i686, 128MB RAM, 1GB disco</td><td>CPU i686 500MHz, 256MB RAM, 2GB disco</td></tr>
+          <tr><td>Small Desktop Edition</td><td>Entre Tiny e Minimal, balanceado.</td><td>CPU i686, 256MB RAM, 1.5GB disco</td><td>CPU i686 700MHz, 512MB RAM, 3GB disco</td></tr>
+          <tr><td>Ultra Small Desktop Edition</td><td>Mínimo absoluto com OpenBox e poucas dependências.</td><td>CPU i686, 64MB RAM, 500MB disco</td><td>CPU i686 400MHz, 128MB RAM, 1GB disco</td></tr>
+          <tr><td>Nano Small Desktop Edition</td><td>Imagem ultra enxuta — para recuperação e uso pontual.</td><td>CPU i686, 32MB RAM, 200MB disco</td><td>CPU i686 300MHz, 64MB RAM, 400MB disco</td></tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin-top:18px">Requisitos para x86_64 (64-bit)</h3>
+      <p class="small">As recomendações são normalmente: Mínimo 1GB RAM (depende da edição), Recomendado 2GB+. Espaço em disco varia por edição (ver tabela acima para equivalências).</p>
+    </main>
+
+    <footer class="footer"><div>© 2028 Silvio Ramalho Neto da Silva</div><div class="small">OpenBox em todas as edições</div></footer>
+  </div>
+</body>
+</html>
+
